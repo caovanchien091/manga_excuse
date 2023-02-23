@@ -1,0 +1,29 @@
+name: manga_excuse
+publish_to: none
+
+environment:
+  sdk: '>=2.18.0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  source:
+    path: package/source
+  common:
+    path: package/common
+  theme:
+    path: package/theme
+  widget:
+    path: package/widget
+
+  auth:
+    path: module/auth
+  error:
+    path: module/error
+
+dev_dependencies:
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
