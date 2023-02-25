@@ -1,21 +1,19 @@
 import 'package:common/common.dart';
 import 'package:flutter/material.dart';
+import 'package:widget/route/custom_page_route.dart';
 
 class ErrorRoute extends RouteRegister {
-  static const authSingIn = '/authSignIn';
-  static const authSingUp = '/authSignUp';
-
   @override
-  List<String> routes = [
-    ErrorRoute.authSingIn,
-    ErrorRoute.authSingUp,
-  ];
+  List<String> routes = [];
 
   @override
   Route? register(settings, injection) {
     switch (settings.name) {
-      case authSingIn:
-      case authSingUp:
+      default:
+        return CustomPageRoute(
+          settings: settings,
+          child: Container(),
+        );
     }
   }
 }

@@ -1,13 +1,19 @@
 library manga_excuse;
 
-import 'package:manga_excuse/manga_excuse.dart';
+// Bootstrap
+// =============================================================================
 
-export 'package:flutter/material.dart';
 export 'bootstrap/app_bootstrap.dart';
+export 'bootstrap/env_default.dart';
 
-void main() => AppBootstrap.I.boot(
-      runApp: runApp,
-      initRoute: (injection) {
-        return 'authSingIn';
-      },
-    );
+// Register
+// =============================================================================
+
+export 'register/main_route.dart';
+export 'register/main_dependency.dart';
+
+// Screen
+// =============================================================================
+
+export 'screen/launch/launch_screen.dart';
+export 'screen/home/home_screen.dart';

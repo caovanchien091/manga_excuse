@@ -40,17 +40,32 @@ class DefaultCache extends Cache {
   }
 
   @override
-  Future<void> write(String key, dynamic value) {
-    return _cacheBox.put(key, value);
+  Future<bool> write(String key, dynamic value) async {
+    try {
+      _cacheBox.put(key, value);
+      return true;
+    } catch (error) {
+      return false;
+    }
   }
 
   @override
-  Future<void> delete(String key) {
-    return _cacheBox.delete(key);
+  Future<bool> delete(String key) async {
+    try {
+      _cacheBox.delete(key);
+      return true;
+    } catch (error) {
+      return false;
+    }
   }
 
   @override
-  Future<void> clear() {
-    return _cacheBox.deleteFromDisk();
+  Future<bool> clear() async {
+    try {
+      _cacheBox.deleteFromDisk();
+      return true;
+    } catch (error) {
+      return false;
+    }
   }
 }

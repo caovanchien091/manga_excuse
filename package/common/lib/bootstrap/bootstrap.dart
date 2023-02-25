@@ -1,52 +1,48 @@
 import 'package:common/common.dart';
-import 'package:flutter/material.dart';
 
 abstract class Bootstrap {
+  abstract EnvData envData;
+  abstract RouteRegister errorRoute;
   abstract List<RouteRegister> routes;
-  abstract List<RouteRegister> errorRoutes;
   abstract List<DependencyRegister> dependencies;
 
-
-  void complete(
-    String initRoute,
-    GenerateRoute onGenerate,
-    GenerateRoute onUnknown,
-  );
-
   void boot({
-    required RunApp runApp,
     required InitRoute initRoute,
+    required BootstrapComplete complete,
   }) async {
-    await _register(Injection.I);
+    var injection = Injection.I;
+
+    await _register(injection);
 
     for (var dependency in dependencies) {
       await dependency.register(
-        Injection.I,
+        injection,
       );
     }
 
     complete(
-      initRoute(Injection.I),
-      (settings) => _generateRoute(routes, settings),
-      (settings) => _generateRoute(errorRoutes, settings),
+      initRoute(injection),
+      (settings) {
+        for (var route in routes) {
+          if (route.contains(settings)) {
+            return route.register(
+              settings,
+              injection,
+            );
+          }
+        }
+      },
+      (settings) {
+        return errorRoute.register(
+          settings,
+          injection,
+        );
+      },
     );
   }
 
-  Route<dynamic>? _generateRoute(
-    List<RouteRegister> routes,
-    RouteSettings settings,
-  ) {
-    for (var route in routes) {
-      if (route.contains(settings)) {
-        return route.register(
-          settings,
-          Injection.I,
-        );
-      }
-    }
-  }
-
   Future _register(Injection injection) async {
+    // Init Hive cache local
     await Hive.initFlutter().then(
       (value) => Hive.openBox(cacheName).then(
         (value) => injection.factory<Cache>(
@@ -54,5 +50,11 @@ abstract class Bootstrap {
         ),
       ),
     );
+
+    // Init Env data
+    injection.singleton(Env(
+      injection.get<Cache>(),
+      envData,
+    ));
   }
 }

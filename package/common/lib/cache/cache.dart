@@ -7,9 +7,9 @@ abstract class Cache {
 
   String? readString(String key);
 
-  Future<void> write(String key, dynamic value);
+  Future<bool> write(String key, dynamic value);
 
-  Future<void> delete(String key);
+  Future<bool> delete(String key);
 
-  Future<void> clear();
+  Future<bool> clear();
 }

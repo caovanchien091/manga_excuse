@@ -1,13 +1,10 @@
-library auth;
+library notify;
 
 // Register
 // =============================================================================
 
-export 'register/auth_route.dart';
-export 'register/auth_dependency.dart';
+export 'register/notify_route.dart';
+export 'register/notify_dependency.dart';
 
 // Screen
 // =============================================================================
-
-export 'screen/sign_in/sign_in_screen.dart';
-export 'screen/sign_up/sign_up_screen.dart';

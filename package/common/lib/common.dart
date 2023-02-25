@@ -63,3 +63,9 @@ export 'share/flutter_bloc.dart';
 export 'share/hive.dart';
 export 'share/get_it.dart';
 export 'share/dio.dart';
+
+// Env
+// =============================================================================
+
+export 'environment/env.dart';
+export 'environment/env_data.dart';

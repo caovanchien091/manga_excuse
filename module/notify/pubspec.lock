@@ -7,14 +7,7 @@ packages:
       name: async
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.9.0"
-  auth:
-    dependency: "direct main"
-    description:
-      path: "module/auth"
-      relative: true
-    source: path
-    version: "0.0.0"
+    version: "2.10.0"
   bloc:
     dependency: transitive
     description:
@@ -39,7 +32,7 @@ packages:
   common:
     dependency: "direct main"
     description:
-      path: "package/common"
+      path: "../../package/common"
       relative: true
     source: path
     version: "0.0.0"
@@ -57,13 +50,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "5.0.0"
-  error:
-    dependency: "direct main"
-    description:
-      path: "module/error"
-      relative: true
-    source: path
-    version: "0.0.0"
   ffi:
     dependency: transitive
     description:
@@ -153,20 +139,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
-  notify:
-    dependency: "direct main"
-    description:
-      path: "module/notify"
-      relative: true
-    source: path
-    version: "0.0.0"
   path:
     dependency: transitive
     description:
       name: path
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.8.2"
+    version: "1.8.3"
   path_provider:
     dependency: transitive
     description:
@@ -245,7 +224,7 @@ packages:
   source:
     dependency: "direct main"
     description:
-      path: "package/source"
+      path: "../../package/source"
       relative: true
     source: path
     version: "0.0.0"
@@ -255,14 +234,14 @@ packages:
       name: source_span
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.9.0"
+    version: "1.9.1"
   string_scanner:
     dependency: transitive
     description:
       name: string_scanner
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.1"
+    version: "1.2.0"
   term_glyph:
     dependency: transitive
     description:
@@ -273,7 +252,7 @@ packages:
   theme:
     dependency: "direct main"
     description:
-      path: "package/theme"
+      path: "../../package/theme"
       relative: true
     source: path
     version: "0.0.0"
@@ -294,7 +273,7 @@ packages:
   widget:
     dependency: "direct main"
     description:
-      path: "package/widget"
+      path: "../../package/widget"
       relative: true
     source: path
     version: "0.0.0"

@@ -1,23 +1,25 @@
 import 'package:auth/auth.dart';
 import 'package:common/common.dart';
 import 'package:error/error.dart';
+import 'package:manga_excuse/manga_excuse.dart';
 import 'package:source/source.dart';
 import 'package:widget/widget.dart';
-import 'package:manga_excuse/manga_excuse.dart';
 
 class AppBootstrap extends Bootstrap {
-  static AppBootstrap I = AppBootstrap();
+  static final I = AppBootstrap();
+
+  @override
+  EnvData envData = EnvDefault();
+
+  @override
+  RouteRegister errorRoute = ErrorRoute();
 
   @override
   List<RouteRegister> routes = [
     SourceRoute(),
     WidgetRoute(),
     AuthRoute(),
-  ];
-
-  @override
-  List<RouteRegister> errorRoutes = [
-    ErrorRoute(),
+    MainRoute(),
   ];
 
   @override
@@ -26,16 +28,6 @@ class AppBootstrap extends Bootstrap {
     WidgetDependency(),
     AuthDependency(),
     ErrorDependency(),
+    MainDependency(),
   ];
-
-  @override
-  void complete(initRoute, onGenerate, onUnknown) {
-    runApp(
-      Application(
-        initRoute: initRoute,
-        onGenerateRoute: onGenerate,
-        onUnknownRoute: onUnknown,
-      ),
-    );
-  }
 }

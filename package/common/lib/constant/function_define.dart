@@ -9,4 +9,8 @@ typedef GenerateRoute = Route? Function(RouteSettings settings);
 
 typedef InitRoute = String Function(Injection);
 
-typedef RunApp = void Function(Widget app);
+typedef BootstrapComplete = Function(
+  String initRoute,
+  GenerateRoute onGenerate,
+  GenerateRoute onUnknown,
+);

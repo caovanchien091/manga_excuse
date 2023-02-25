@@ -7,6 +7,10 @@ extension DynamicExtension<T extends Object> on T? {
     return operationFor(this);
   }
 
+  T orDefault(T Function(T? self) valueDefault) {
+    return valueDefault(this);
+  }
+
   T? also(void Function(T? self) operationFor) {
     operationFor(this);
     return this;
