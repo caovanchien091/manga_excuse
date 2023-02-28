@@ -14,14 +14,14 @@ class AppIcon extends StatelessWidget {
 
   const AppIcon({
     Key? key,
-    this.size = 24,
-    this.padding = 0,
     this.iconData,
     this.iconPath,
     this.iconUrl,
     this.radius,
     this.color,
     this.background,
+    this.size = 24,
+    this.padding = 0,
   }) : super(key: key);
 
   @override
@@ -80,6 +80,13 @@ class AppIcon extends StatelessWidget {
       color: color,
       width: _size,
       height: _size,
+      errorBuilder: (_, __, ___) {
+        return Container(
+          width: _size,
+          height: _size,
+          color: Colors.blue,
+        );
+      },
     );
   }
 

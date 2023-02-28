@@ -23,6 +23,18 @@ class NetworkResponse<TResponse> {
       return onFailure(exception as BaseException);
     }
   }
+
+  NetworkResponse<T> map<T>(T Function(TResponse value) transform) {
+    if (isSuccess) {
+      return ResponseSuccess<T>(
+        response: transform(response as TResponse),
+      );
+    } else {
+      return ResponseFailure<T>(
+        exception: exception as BaseException,
+      );
+    }
+  }
 }
 
 class ResponseSuccess<TResponse> extends NetworkResponse<TResponse> {

@@ -35,6 +35,10 @@ class CustomPageRoute<T> extends CustomPage<T> {
     Animation<double> secondaryAnimation,
     Widget child,
   ) {
-    return buildPage(context, animation, secondaryAnimation);
+    return buildPage(
+      context,
+      animation,
+      secondaryAnimation,
+    );
   }
 }

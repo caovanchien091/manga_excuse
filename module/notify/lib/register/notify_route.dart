@@ -1,6 +1,5 @@
 import 'package:common/common.dart';
 import 'package:flutter/material.dart';
-import 'package:widget/widget.dart';
 
 class NotificationRoute extends RouteRegister {
   @override
@@ -12,10 +11,10 @@ class NotificationRoute extends RouteRegister {
     }
   }
 
-  Route _buildSignUp(RouteSettings settings, Injection injection) {
-    return CustomPageRoute(
-      settings: settings,
-      child: Container(),
-    );
-  }
+  // Route _buildSignUp(RouteSettings settings, Injection injection) {
+  //   return CustomPageRoute(
+  //     settings: settings,
+  //     child: Container(),
+  //   );
+  // }
 }

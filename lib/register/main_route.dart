@@ -18,6 +18,8 @@ class MainRoute extends RouteRegister {
     switch (settings.name) {
       case launch:
         return _buildLaunch(settings, injection);
+      case home:
+        return _buildHome(settings, injection);
     }
   }
 

@@ -15,7 +15,9 @@ abstract class CustomPage<T> extends PageRoute<T> {
   String? get barrierLabel => null;
 
   @override
-  Duration get transitionDuration => const Duration(
-        seconds: 5,
-      );
+  Duration get transitionDuration {
+    return const Duration(
+      seconds: 5,
+    );
+  }
 }

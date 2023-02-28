@@ -2,14 +2,17 @@ import 'dart:async';
 
 import 'package:common/common.dart';
 
-Future<NetworkResponse<T>> runNetworkGuarded<T>(
-  Future<T> Function() run,
-) async {
+Future<NetworkResponse<O>> runNetworkGuarded<I, O>({
+  required Future<I> Function() run,
+  required O Function(I value) transform,
+}) async {
   BaseException exception;
 
   try {
     return ResponseSuccess(
-      response: await run(),
+      response: transform(
+        await run(),
+      ),
     );
   } on FormatException catch (_) {
     exception = const ParserException();
