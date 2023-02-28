@@ -2,6 +2,7 @@
 // =============================================================================
 
 export 'repository/cache_repository.dart';
+export 'repository/auth_repository.dart';
 export 'repository/session_repository.dart';
 
 // Datasource
@@ -9,7 +10,8 @@ export 'repository/session_repository.dart';
 
 export 'datasource/client/gateway_client.dart';
 export 'datasource/service/local/cache_service.dart';
-export 'datasource/service/remote/session_service.dart';
+export 'datasource/service/local/session_service.dart';
+export 'datasource/service/remote/auth_service.dart';
 
 // Model
 // =============================================================================

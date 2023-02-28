@@ -10,13 +10,14 @@ class SourceDependency extends DependencyRegister {
   }
 
   Future<void> dataRegister(Injection injection) async {
-    injection.factory<GatewayClient>(() => GatewayClient());
+    injection.factory<GatewayClient>(() => GatewayClient(injection.get()));
     injection.factory<CacheService>(() => CacheService(injection.get(), injection.get()));
-    injection.factory<SessionService>(() => SessionService(injection.get()));
+    injection.factory<SessionService>(() => SessionService(injection.get(), injection.get()));
   }
 
   Future<void> domainRegister(Injection injection) async {
     injection.factory<CacheRepository>(() => CacheRepositoryImp(injection.get()));
     injection.factory<SessionRepository>(() => SessionRepositoryImp(injection.get()));
+    injection.factory<AuthRepository>(() => AuthRepositoryImp(injection.get()));
   }
 }

@@ -1,6 +1,7 @@
 // Repository
 // =============================================================================
 
+export 'repository/auth_repository.dart';
 export 'repository/cache_repository.dart';
 export 'repository/session_repository.dart';
 

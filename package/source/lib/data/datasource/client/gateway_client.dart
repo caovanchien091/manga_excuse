@@ -1,6 +1,10 @@
 import 'package:common/common.dart';
 
 class GatewayClient extends NetworkClient {
+  final Env _env;
+
+  GatewayClient(this._env);
+
   @override
   String get baseUrl => '';
 

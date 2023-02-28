@@ -1,10 +1,7 @@
-import 'package:common/common.dart';
 import 'package:source/domain/domain.dart';
 
 abstract class SessionRepository {
-  Future<NetworkResponse<SessionEntity>> login({
-    AccountParam? param,
-  });
+  SessionEntity readSession();
 
-  Future<NetworkResponse<SessionEntity>> nonLogin();
+  Future<bool> writeSession(SessionEntity session);
 }

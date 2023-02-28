@@ -18,12 +18,12 @@ class CacheService {
     return _cache.readString(langKey) ?? _env.lang;
   }
 
-  Future<bool> writeCurrency(String currency) {
-    return _cache.write(currencyKey, currency);
-  }
-
   Future<bool> writeLang(String lang) {
     return _cache.write(langKey, lang);
+  }
+
+  Future<bool> writeCurrency(String currency) {
+    return _cache.write(currencyKey, currency);
   }
 
   Future<bool> writeTimeFormat(String timeFormat) {

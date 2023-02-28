@@ -1,10 +1,10 @@
 import 'package:source/data/data.dart';
 import 'package:source/domain/domain.dart';
 
-class SessionService {
+class AuthService {
   final GatewayClient _client;
 
-  SessionService(this._client);
+  AuthService(this._client);
 
   Future<SessionModel> login({
     AccountParam? param,

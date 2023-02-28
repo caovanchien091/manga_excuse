@@ -1,4 +1,3 @@
-import 'package:common/common.dart';
 import 'package:source/data/data.dart';
 import 'package:source/domain/domain.dart';
 
@@ -8,23 +7,17 @@ class SessionRepositoryImp extends SessionRepository {
   SessionRepositoryImp(this._service);
 
   @override
-  Future<NetworkResponse<SessionEntity>> login({
-    AccountParam? param,
-  }) async {
-    return runNetworkGuarded(
-      run: () => _service.login(param: param),
-      transform: (value) => SessionEntity.fromMap(
-        value.toMap(),
-      ),
+  SessionEntity readSession() {
+    return SessionEntity.fromMap(
+      _service.readSession().toMap(),
     );
   }
 
   @override
-  Future<NetworkResponse<SessionEntity>> nonLogin() {
-    return runNetworkGuarded(
-      run: () => _service.nonLogin(),
-      transform: (value) => SessionEntity.fromMap(
-        value.toMap(),
+  Future<bool> writeSession(SessionEntity session) {
+    return _service.saveSession(
+      SessionModel.fromMap(
+        session.toMap(),
       ),
     );
   }
