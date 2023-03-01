@@ -2,8 +2,10 @@ import 'dart:async';
 
 import 'package:scripts/scripts.dart';
 
-void main() async {
-  await runPubGet();
+void main(List<String> args) async {
+  if(args.contains('pub-get')) {
+    await runPubGet();
+  }
 }
 
 FutureOr runPubGet([bool isModule = true]) async {

@@ -38,7 +38,7 @@ class RunCommand {
         runInShell: true,
         workingDirectory: path,
       ).then((result) {
-        return stdout.write(result.stdout);
+         stdout.write(result.stdout);
       });
     };
   }
