@@ -17,7 +17,7 @@ abstract class CustomPage<T> extends PageRoute<T> {
   @override
   Duration get transitionDuration {
     return const Duration(
-      seconds: 5,
+      milliseconds: 250,
     );
   }
 }

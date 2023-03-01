@@ -35,10 +35,7 @@ class CustomPageRoute<T> extends CustomPage<T> {
     Animation<double> secondaryAnimation,
     Widget child,
   ) {
-    return buildPage(
-      context,
-      animation,
-      secondaryAnimation,
-    );
+    return Theme.of(context).pageTransitionsTheme.buildTransitions<T>(
+        this, context, animation, secondaryAnimation, child);
   }
 }

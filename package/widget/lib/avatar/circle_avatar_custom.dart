@@ -94,7 +94,10 @@ class CircleAvatarCustom extends StatelessWidget {
       fit: BoxFit.fitHeight,
       alignment: Alignment.center,
       errorBuilder: (context, error, stackTrace) {
-        return Container();
+        return SizedBox(
+          width: size,
+          height: size,
+        );
       },
     );
   }

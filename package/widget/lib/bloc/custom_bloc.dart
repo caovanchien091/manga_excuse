@@ -31,10 +31,7 @@ class CustomBloc<BLOC extends StateStreamable<S>, S> extends StatelessWidget {
           listener!(previous, current);
         }
         if (buildWhen != null) {
-          var needBuild = buildWhen!(previous, current);
-          if (needBuild == true) {
-            return needBuild;
-          }
+          return buildWhen!(previous, current);
         }
         if (selectors != null) {
           for (var selector in selectors!) {
