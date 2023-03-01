@@ -6,6 +6,12 @@ class GatewayClient extends NetworkClient {
   GatewayClient(this._env);
 
   @override
+  bool get isLogger => _env.isLogger;
+
+  @override
+  bool get isCheckNetwork => _env.isCheckNetwork;
+
+  @override
   String get baseUrl => '';
 
   @override

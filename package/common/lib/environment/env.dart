@@ -6,6 +6,10 @@ class Env {
 
   const Env(this._cache, this._envData);
 
+  bool get isLogger => _envData.isLogger;
+
+  bool get isCheckNetwork => _envData.isCheckNetwork;
+
   String get lang => _cache.readString(langKey).orDefault(
         (self) => _envData.defaultLang,
       );

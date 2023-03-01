@@ -9,4 +9,10 @@ class EnvDefault extends EnvData {
 
   @override
   String get defaultTimeFormat => 'dd/MM/yyyy';
+
+  @override
+  bool get isCheckNetwork => true;
+
+  @override
+  bool get isLogger => true;
 }
