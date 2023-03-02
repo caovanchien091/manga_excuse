@@ -8,7 +8,11 @@ extension DynamicExtension<T extends Object> on T? {
   }
 
   T orDefault(T Function(T? self) valueDefault) {
-    return valueDefault(this);
+    if (this != null) {
+      return this!;
+    } else {
+      return valueDefault(this);
+    }
   }
 
   T? also(void Function(T? self) operationFor) {

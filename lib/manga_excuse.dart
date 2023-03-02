@@ -10,6 +10,7 @@ export 'bootstrap/env_default.dart';
 // =============================================================================
 
 export 'register/main_route.dart';
+export 'register/error_route.dart';
 export 'register/main_dependency.dart';
 
 // Screen
@@ -17,3 +18,4 @@ export 'register/main_dependency.dart';
 
 export 'screen/launch/launch_screen.dart';
 export 'screen/home/home_screen.dart';
+export 'screen/error/not_found_screen.dart';

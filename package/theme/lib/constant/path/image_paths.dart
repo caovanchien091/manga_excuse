@@ -5,5 +5,4 @@ class ImagePaths {
 
   // ==> Errors <== //
   static const String _errorPath = '$_package/error';
-  static const String errorNotFound = '$_errorPath/not_found.png';
 }

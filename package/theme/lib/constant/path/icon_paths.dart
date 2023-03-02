@@ -5,5 +5,5 @@ class IconPaths {
 
   // ==> Errors <== //
   static const String _errorPath = '$_package/error';
-  static const String errorImageNotFound = '$_errorPath/image_not_found.png';
+  static const String iconPageNotFound = '$_errorPath/page_not_found.png';
 }

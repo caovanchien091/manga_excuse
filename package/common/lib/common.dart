@@ -69,3 +69,8 @@ export 'share/dio.dart';
 
 export 'environment/env.dart';
 export 'environment/env_data.dart';
+
+// UUID
+// =============================================================================
+
+export 'uuid/generate_uuid.dart';

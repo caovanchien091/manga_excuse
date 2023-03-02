@@ -1,4 +1,3 @@
-import 'package:auth/auth.dart';
 import 'package:common/common.dart';
 import 'package:flutter/material.dart';
 import 'package:manga_excuse/manga_excuse.dart';
@@ -49,12 +48,12 @@ class _LaunchScreenState extends State<LaunchScreen> {
   void _listener(LaunchState previous, LaunchState current) {
     if (current is LaunchSingInState) {
       Navigator.of(context).pushReplacementNamed(
-        AuthRoute.signIn,
+        ''
       );
     }
     if (current is LaunchSingUpState) {
       Navigator.of(context).pushReplacementNamed(
-        AuthRoute.signUp,
+        ''
       );
     }
     if (current is LaunchHomeState) {

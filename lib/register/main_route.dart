@@ -39,13 +39,6 @@ class MainRoute extends RouteRegister {
 
   Route _buildHome(RouteSettings settings, Injection injection) {
     return CustomPageRoute(
-      providers: [
-        BlocProvider<LaunchBloc>(
-          create: (context) {
-            return injection.get<LaunchBloc>();
-          },
-        ),
-      ],
       settings: settings,
       child: const HomeScreen(),
     );
